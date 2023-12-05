@@ -11,8 +11,8 @@ void ps10qsn1();
 void ps10qsn2();
 int main()
 {
-    ps10qsn2();
-    //ps10qsn1();
+    //ps10qsn2();
+    ps10qsn1();
     // ps10qsn1();
     //  qsn2();
     //   qsn1();
