@@ -18,12 +18,12 @@ int main()
     student *s2 = malloc(n * sizeof(student));
     for (int i = 0; i < n; i++)
     {
-        s1->name[i] = (char *)malloc(100 * sizeof(char));
+        s1[i].name = (char *)malloc(100 * sizeof(char));
     }
 
     for (int i = 0; i < n; i++)
     {
-        s2->name[i] = (char *)malloc(100 * sizeof(char));
+        s2[i].name = (char *)malloc(100 * sizeof(char));
     }
     // Open file for writing
     fp = fopen("test.txt", "w");
@@ -65,9 +65,9 @@ int main()
         return 1; // Exit the program if file opening fails
     }
     printf("\nRead from file and store in s2: ");
-    // use fsanf(fp, "%d", theVarname) like scanf
+    // use fscanf(fp, "%d", theVarname) like scanf
     int i = 0;
-    while (fscanf(fp, "%d %[^\n]", &s2[i].rollNo, s2[i].name) != EOF)
+    while (fscanf(fp, "%d %[^\n]s", &s2[i].rollNo, s2[i].name) != EOF)
     {
         i++;
     }

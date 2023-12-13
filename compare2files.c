@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
     // move file pointer to end and get total number of bytes
     fseek(fp2, 0, SEEK_END);
     cnt2 = ftell(fp2);
-
+    //move pointers to start of file with 0 offset
     fseek(fp1, 0, SEEK_SET);
     fseek(fp2, 0, SEEK_SET);
 

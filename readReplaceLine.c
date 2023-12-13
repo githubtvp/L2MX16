@@ -99,13 +99,13 @@ int main()
     fclose(fp);
     fp1 = fopen("temp.txt", "w");
     fp = fopen("test.txt", "r");
-    if (fp == NULL)
+    if (fp == NULL || fp1 == NULL)
     {
         printf("\nError opening file for read");
         return 1; // Exit the program if file opening fails
     }
     int ln = 2;
-    cnt = 1;
+    cnt = 0;
     char *thisLn = "7 sant\n";
     while (fgets(newLn, sizeof(newLn), fp) != NULL) {
       //  printf("\n%s  %d", thisLn, cnt);
@@ -118,6 +118,8 @@ int main()
             fprintf(fp1, newLn);
         }       
         cnt++;
+    //    cnt = ftell(fp); //, 0, SEEK_CUR);
+    //    printf("\n%d ", cnt);
     }
 
 
