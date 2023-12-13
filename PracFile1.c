@@ -5,7 +5,7 @@
 struct s
 {
     int rollNo;
-    char *name; // Assuming a fixed-size name for simplicity
+    char *name; 
 };
 
 typedef struct s student;
@@ -18,12 +18,12 @@ int main()
     student *s2 = malloc(n * sizeof(student));
     for (int i = 0; i < n; i++)
     {
-        s1[i].name = (char *)malloc(100 * sizeof(char));
+        s1->name[i] = (char *)malloc(100 * sizeof(char));
     }
 
     for (int i = 0; i < n; i++)
     {
-        s2[i].name = (char *)malloc(100 * sizeof(char));
+        s2->name[i] = (char *)malloc(100 * sizeof(char));
     }
     // Open file for writing
     fp = fopen("test.txt", "w");
