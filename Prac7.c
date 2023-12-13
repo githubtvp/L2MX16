@@ -10,10 +10,11 @@ void printData(int **p, int r, int c);
 int main()
 {
     int r = 3, c = 4;
-    int **p;
-    p = allocate(r, c);
-    readData(p, r, c);
-    printData(p, r, c);
+    staticArrOfPointers();
+    // int **p;
+    // p = allocate(r, c);
+    // readData(p, r, c);
+    // printData(p, r, c);
     // getInt();
     printf("\nTest line");
     return 0;
@@ -63,7 +64,7 @@ void staticArrOfPointers()
     int N = 20, M = 10;
     int n, i;
     char aWord[N], *wordArr[M]; // this is static array of pointers
-    printf("\nEnter 3 number of names : \n");
+    printf("\nEnter number of names : \n");
     scanf("%d", &n);
     printf("\nEnter the names : \n");
     char *aWord2 = (char *)malloc(sizeof(char));
@@ -74,7 +75,7 @@ void staticArrOfPointers()
         wordArr[i] = (char *)malloc(sizeof(char));
         strcpy(wordArr[i], aWord2);
     }
-    for (i = 0; i < n; i++)
+    for (i = n-1; i >=0; i--)
     {
         printf("%s ", wordArr[i]);
     }

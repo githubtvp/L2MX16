@@ -1,4 +1,4 @@
-/*Array of Pointers of Strings
+                                                                     /*Array of Pointers of Strings
 In C we can use an Array of pointers.
 Instead of having a 2-Dimensional character array,
 we can have a single-dimensional array of Pointers.
@@ -19,6 +19,9 @@ void ReverseArray(char *arr[], int n);
 
 int main()
 {
+    char **arr2;
+    printf("\nEnter a line :");
+    fgets(arr2, 100, stdin);
     char *arr[] = {"Geek1", "Geeks2", "Geekfor3"};
     printf("String array Elements are:\n");
 
@@ -29,6 +32,9 @@ int main()
     PrintArray(arr, 3);
     ReverseArray(arr, 3);
     PrintArray(arr, 3);
+ printf("\nTest a line :");
+ puts(arr2);
+    PrintArray(arr2, 3);
     return 0;
 }
 
