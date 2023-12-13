@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include<stdlib.h>
 int main()
 {
     FILE *fp;
@@ -27,7 +27,7 @@ int main()
         fprintf(fp, "%s %d %f\n", e.name, e.age, e.bs);
         printf("Add another record (Y/N) ");
         fflush(stdin);
-        another = getche();
+        another = getch();
     }
 
     fclose(fp);

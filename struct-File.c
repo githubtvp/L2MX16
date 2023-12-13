@@ -9,15 +9,17 @@ struct s
 
 int main()
 {
-    struct s a[5], b[5];
+    int n;
+    n = 2;
+    struct s a[n], b[n];
     FILE *fptr;
     int i;
 
-    clrscr();
+    //clrscr();
 
     fptr = fopen("file.txt", "w");
 
-    for (i = 0; i < 5; ++i)
+    for (i = 0; i < n; ++i)
     {
         printf("Enter name: ");
         gets(a[i].name);
@@ -31,11 +33,10 @@ int main()
     fptr = fopen("file.txt", "r");
     fread(b, sizeof(b), 1, fptr);
 
-    for (i = 0; i < 5; ++i)
+    for (i = 0; i < n; ++i)
     {
         printf("Name: %s\nHeight: %d\n", b[i].name, b[i].height);
     }
-
     fclose(fptr);
     getch();
     return 0;
