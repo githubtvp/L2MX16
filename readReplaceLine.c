@@ -108,7 +108,7 @@ int main()
     cnt = 0;
     char *thisLn = "7 sant\n";
     while (fgets(newLn, sizeof(newLn), fp) != NULL) {
-      //  printf("\n%s  %d", thisLn, cnt);
+       // printf("\n%s  %d", newLn, cnt);
         if(cnt == ln)
         {
             fprintf(fp1, thisLn);

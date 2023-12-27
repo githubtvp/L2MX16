@@ -11,13 +11,13 @@ int main()
     char searchStr[10] = "test";
     char *result;
     char *line;
-    line = (char*)malloc(100 *sizeof(char));
-    while(fgets(line, sizeof(line), fp1))
+    line = (char *)malloc(100 * sizeof(char));
+    while (fgets(line, sizeof(line), fp1) != NULL)
     {
-        result = strstr(line, searchStr);
-        printf("%s", result);
+        //printf("\n%s", line);
+        if(strstr(line, searchStr) != NULL)
+        printf("\n%s", line);
     }
-
 
     printf("\nTest line");
     return 0;
