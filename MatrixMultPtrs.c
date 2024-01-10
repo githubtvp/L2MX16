@@ -64,10 +64,20 @@ int main()
         }
 
         //multiplying elements El += row X col
-        for (d = 0; d < m; ++d)     // m x n
-            for (e = 0; e < q; ++e) // p x q
-                for (f = 0; f < n; ++f)
-                    mx3[d][e] += mx1[d][f] * mx2[f][e]; //*(p1 + d * n + f) * *(p2 + f * q + e);
+        // for (d = 0; d < m; ++d)     // m x n
+        //     for (e = 0; e < q; ++e) // p x q
+        //         for (f = 0; f < n; ++f)
+        //          //   mx3[d][e] += mx1[d][f] * mx2[f][e]; //*(p1 + d * n + f) * *(p2 + f * q + e);
+        //             *(*(mx3+d)+e) += *(*(mx1+d)+f) * *(*(mx2+f)+e); //*(p1 + d * n + f) * *(p2 + f * q + e);
+        int i, j, k;
+        for (i = 0; i < m; ++i)     // m x n
+            for (j = 0; j < q; ++j) // p x q
+                for (k = 0; k < n; ++k)
+                 //   mx3[d][e] += mx1[d][f] * mx2[f][e]; //*(p1 + d * n + f) * *(p2 + f * q + e);
+                    *(*(mx3+i)+j) += *(*(mx1+i)+k) * *(*(mx2+k)+j); //*(p1 + d * n + f) * *(p2 + f * q + e);
+       
+       
+       
         printf("\n\nThe Product of two matrices using Pointer is . . . \n\n");
         for (d = 0; d < m; ++d)
         {
